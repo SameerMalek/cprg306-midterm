@@ -6,11 +6,11 @@ const FormExam = () => {
   const [surname, setSurname] = useState("");
   const [fullname, setFullname] = useState("");
 
-  const handleNameChange = (event) => {
+  const handleChange1 = (event) => {
     setName(event.target.value);
   };
 
-  const handleSurnameChange = (event) => {
+  const handleChange2 = (event) => {
     setSurname(event.target.value);
   };
 
@@ -39,7 +39,7 @@ const FormExam = () => {
               type="text"
               placeholder="Enter your firstname"
               value={firstname}
-              onChange={handleNameChange}
+              onChange={handleChange1}
               className="text-center"
             />
           </div>
@@ -49,7 +49,7 @@ const FormExam = () => {
               type="text"
               placeholder="Enter you surname"
               value={surname}
-              onChange={handleSurnameChange}
+              onChange={handleChange2}
               className="text-center"
             />
           </div>
