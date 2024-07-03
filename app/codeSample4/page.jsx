@@ -4,10 +4,10 @@ import InteractivityExam from "@/components/interactivityExam";
 
 const CodeSample4 = () => {
   const myList = [
-    { id: "1", name: "Cat" },
-    { id: "2", name: "Dog" },
-    { id: "3", name: "Chicken" },
-    { id: "3", name: "Cow" },
+    { id: 1, name: "Cat" },
+    { id: 2, name: "Dog" },
+    { id: 3, name: "Chicken" },
+    { id: 4, name: "Cow" },
   ];
 
   return (
