@@ -18,6 +18,10 @@ const InteractivityExam = ({ list }) => {
     event.preventDefault();
   };
 
+  const getWord = () => {
+    setWord(word + "t");
+  };
+
   return (
     <div>
       {word && <div>{word}</div>}
