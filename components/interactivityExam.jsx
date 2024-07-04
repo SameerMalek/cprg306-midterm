@@ -11,15 +11,10 @@ const InteractivityExam = ({ list }) => {
 
   const handleNameChange = (event) => {
     setWord(event.target.value);
-    getWord();
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
-
-  const getWord = () => {
-    setWord(word + "t");
   };
 
   return (

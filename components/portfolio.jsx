@@ -14,12 +14,15 @@ const Portfolio = () => {
         <h2>{title}</h2>
         <p>{description}</p>
 
-        <h3>Skills:</h3>
+<section className="border border-gray-500 p-2 bg-gray-100 rounded-md shadow-md mt-2 mb-2"> 
+  <h3>Skills:</h3>
         <ul>
           {skills.map((skill, index) => (
             <li key={index}>{skill}</li>
           ))}
         </ul>
+        </section>
+       
 
         <h3>Projects:</h3>
         <ul>

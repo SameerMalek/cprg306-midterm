@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const FormExam = () => {
   const [firstname, setName] = useState("");
@@ -15,6 +15,8 @@ const FormExam = () => {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the form from refreshing after submission so that the name stays on the page.
+
     if (fullname === "") {
       setFullname(firstname + " " + surname);
     } else {
@@ -47,13 +49,13 @@ const FormExam = () => {
             <label className="px-2">Enter your Surname</label>
             <input
               type="text"
-              placeholder="Enter you surname"
+              placeholder="Enter your surname"
               value={surname}
               onChange={handleChange2}
               className="text-center"
             />
           </div>
-          <div className="flex item-center justify-center py-2">
+          <div className="flex items-center justify-center py-2">
             <button
               className="bg-red-100 p-2 rounded-md border border-red-500"
               type="submit"

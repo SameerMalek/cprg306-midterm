@@ -1,9 +1,27 @@
 "use client";
 
+import React, { useState } from "react";
 import APICallExam from "@/components/apiCallExam";
 
 const CodeSample3 = () => {
+  const [secretCode, setSecretCode] = useState(null);
   const myList = ["Cat", "Dog", "Chicken", "Cow"];
+
+  const handleButtonClick = async () => {
+    const passcode = "ehen2rfow";
+    const url = `https://webdev2-class-demo.vercel.app/api/sampleReqs/${passcode}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setSecretCode(data.secretCode);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  };
 
   return (
     <div className="h-screen bg-white p-2 text-black">
@@ -18,11 +36,17 @@ const CodeSample3 = () => {
         <p>
           This passcode is: "ehen2rfow". It is to be appended to the URL. The
           response from this call will contain a json with a single field called
-          "secretCode". This is the answer to your question.{" "}
+          "secretCode". This is the answer to your question.
         </p>
       </div>
 
       <div className="p-4">
+        <button onClick={handleButtonClick} className="p-2 bg-blue-500 text-white rounded">
+          Get Secret Code
+        </button>
+        {secretCode && (
+          <p className="mt-4 text-green-600">Secret Code: {secretCode}</p>
+        )}
         <APICallExam list={myList} />
       </div>
     </div>
